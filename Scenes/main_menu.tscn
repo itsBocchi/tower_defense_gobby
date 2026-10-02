@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://x4wttktg18ft"]
+
+[ext_resource type="Texture2D" uid="uid://vy3diqcytr74" path="res://Placeholders/placeholder_bg.png" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://tpj74yh4lrdh" path="res://Scripts/scene_switch_button.gd" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://du8u0djs8jbr0" path="res://Placeholders/placeholder_title.png" id="3_n45e2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
+texture = ExtResource("1_1ehe0")
+modulate_color = Color(0.7507996, 0.7507996, 0.7507996, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
+texture = ExtResource("3_n45e2")
+
+[node name="MainMenu" type="Control" unique_id=584504760]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=609394370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1004859783]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -86.75
+offset_right = 140.5
+offset_bottom = 86.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1639706462]
+layout_mode = 2
+size_flags_vertical = 3
+action_mode = 0
+text = "START GAME"
+script = ExtResource("2_ce3w2")
+target_scene = "uid://cv3wttw1smbqo"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1028008806]
+layout_mode = 2
+size_flags_vertical = 3
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=284957623]
+layout_mode = 2
+size_flags_vertical = 3
+text = "EXIT"
+
+[node name="Panel2" type="Panel" parent="." unique_id=2084051797]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 19.0
+offset_right = 258.0
+offset_bottom = 222.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fu7sn")

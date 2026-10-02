@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://roncgkmufpd"]
+
+[ext_resource type="PackedScene" uid="uid://csa88lku1xnuc" path="res://Scenes/prefabs/floor_block.tscn" id="1_84iix"]
+
+[node name="Stage" type="Node2D" unique_id=988337658]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1118013645]
+
+[node name="FloorBlock" parent="." unique_id=980085167 instance=ExtResource("1_84iix")]
+
+[node name="FloorBlock2" parent="." unique_id=211538196 instance=ExtResource("1_84iix")]
+position = Vector2(64, 0)

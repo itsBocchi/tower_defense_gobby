@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://csa88lku1xnuc"]
+
+[ext_resource type="Texture2D" uid="uid://svfr10jbdukt" path="res://Textures/icon.svg" id="1_v0oey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0oey"]
+size = Vector2(64, 64)
+
+[node name="FloorBlock" type="StaticBody2D" unique_id=980085167]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2064391647]
+texture_repeat = 2
+position = Vector2(32, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v0oey")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=922548181]
+position = Vector2(32, -32)
+shape = SubResource("RectangleShape2D_v0oey")

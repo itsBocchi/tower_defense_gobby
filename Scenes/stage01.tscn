@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cv3wttw1smbqo"]
+
+[ext_resource type="PackedScene" uid="uid://ci6dk2gkrj3ey" path="res://Scenes/enemy.tscn" id="1_ea7fd"]
+[ext_resource type="Script" uid="uid://bkdmakajpdgu0" path="res://Scenes/stage.gd" id="1_m34r0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ea7fd"]
+
+[sub_resource type="Sky" id="Sky_sm5uw"]
+sky_material = SubResource("ProceduralSkyMaterial_ea7fd")
+
+[sub_resource type="Environment" id="Environment_jsut0"]
+background_mode = 2
+sky = SubResource("Sky_sm5uw")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_jsut0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsut0"]
+transparency = 1
+albedo_color = Color(0.59607846, 0.4117647, 0.23137255, 0.627451)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rsu4"]
+albedo_color = Color(0.42889306, 0.39529702, 0.8323684, 1)
+
+[node name="Stage01" type="Node3D" unique_id=520591707]
+script = ExtResource("1_m34r0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=493772726]
+transform = Transform3D(0.8660254, -0.35355338, 0.35355338, 0, 0.70710677, 0.70710677, -0.5, -0.6123724, 0.6123724, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=39986553]
+environment = SubResource("Environment_jsut0")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1601867771]
+transform = Transform3D(0.7506582, -0.4041142, 0.52268916, 0, 0.79112524, 0.6116541, -0.6606907, -0.4591432, 0.59386474, 26.589369, 11.087328, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=879558800]
+navigation_mesh = SubResource("NavigationMesh_jsut0")
+
+[node name="Path" type="Node" parent="NavigationRegion3D" unique_id=1094293112]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Path" unique_id=417074723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0246582, 0, -7.821045)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_jsut0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Path" unique_id=546184090]
+transform = Transform3D(0.6843714, 0, -0.72913355, 0, 1, 0, 0.72913355, 0, 0.6843714, 8.918022, 0, -24.50035)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_jsut0")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Path" unique_id=1542034551]
+transform = Transform3D(-0.5903224, 0, -0.8071676, 0, 1, 0, 0.8071676, 0, -0.5903224, 25.40945, 0, -25.09823)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_jsut0")
+
+[node name="Buildable" type="Node" parent="NavigationRegion3D" unique_id=1433745293]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Buildable" unique_id=31579207]
+transform = Transform3D(1.2319236, 0, 0, 0, 1, 0, 0, 0, 1.261424, -3.8187914, 0, -9.284779)
+use_collision = true
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_7rsu4")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Buildable" unique_id=37102210]
+transform = Transform3D(0.68549144, 0, -1.004942, 0, 1, 0, 0.7303269, 0, 0.9432478, 5.9052296, 0, -30.324453)
+use_collision = true
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_7rsu4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Buildable" unique_id=1013846921]
+transform = Transform3D(-0.81276315, 0, -0.8103859, 0, 1, 0, 1.1113183, 0, -0.59267604, 26.221409, 0, -31.078634)
+use_collision = true
+collision_mask = 0
+size = Vector3(3.0493164, 1, 21.794434)
+material = SubResource("StandardMaterial3D_7rsu4")
+
+[node name="EnemyGoal" type="Marker3D" parent="." unique_id=1240988838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.526207, 0, -19.31891)
+
+[node name="EnemySpawn" type="Marker3D" parent="." unique_id=1866109971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.052391, 0, 2.1047828)
+
+[node name="Enemy" parent="." unique_id=1159747386 instance=ExtResource("1_ea7fd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.303379, 0.5470282, 1.9773109)
